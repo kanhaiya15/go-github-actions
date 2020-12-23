@@ -5,8 +5,8 @@ on:
     branches: main
 
 jobs:
-  setup:
-    name: setup
+  setup-build-tests:
+    name: setup-build-tests
     runs-on: ubuntu-latest
     steps:
       - name: Setup Go 1.x
@@ -22,24 +22,11 @@ jobs:
               curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
               dep ensure
           fi
-
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
       - name: Build
         run: go build -v ./...
-
-  test:
-    name: test
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Test
         run: go test -v ./...
-
-  main:
+  docker-setup-build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
