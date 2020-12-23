@@ -1,1 +1,1 @@
-# go-github-actions
+# go-github-actions setup CI/CD
