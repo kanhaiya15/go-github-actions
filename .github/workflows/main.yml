@@ -27,6 +27,7 @@ jobs:
       - name: Test
         run: go test -v ./...
   docker-setup-build-push:
+    needs: setup-build-tests
     name: docker-setup-build-push
     runs-on: ubuntu-latest
     steps:
