@@ -27,6 +27,7 @@ jobs:
       - name: Test
         run: go test -v ./...
   docker-setup-build-push:
+    name: docker-setup-build-push
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
