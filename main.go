@@ -9,5 +9,5 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.Run()
+	_ = r.Run()
 }
